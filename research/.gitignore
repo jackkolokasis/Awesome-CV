@@ -1,0 +1,36 @@
+### TeX ###
+## Core latex/pdflatex auxiliary files:
+*.swp
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pid
+*.fdb 
+*.fls 
+*.nav 
+*.snm 
+*.toc 
+*.lof
+*.fdb_latexmk
+paper.pdf
+ext_abstract.pdf
+.vscode/
+
+### Editor ###
+## Vim temp files:
+.*sw[op]
+
+## Related  Work files:
+related_work/
+related
+
+## Syncting files:
+*.synctex.*
+
+## Python intermediate files
+*.pyc
+
+## Excel tmp open files
+*.xlsx#

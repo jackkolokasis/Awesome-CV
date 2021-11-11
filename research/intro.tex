@@ -1,0 +1,39 @@
+Big data applications critically differ from traditional ones in that
+the amount of temporary and persistent information is often more than
+an order of magnitude larger than the input dataset. At the same time,
+DRAM scaling is ending, and current data movement trends dictate
+data placement close to the processor. My research explores
+heterogeneous memory and storage hierarchies for scalable managed
+big data analytics. My particular focus is on integrating emerging
+non-volatile memory (NVM) and fast storage devices such as
+NVMe SSDs in the analytics stacks.
+
+To fully exploit the potential of emerging memory and storage devices
+requires cross-layer memory management that involves user
+applications, managed language runtimes, and the operating system. I
+have been working on one such system as part of my Ph.D. research that
+enables the transparent use of multi-tier terabyte-scale heaps for
+Apache Spark over DRAM and NVMe storage. I proposed TeraCache that
+provides large compute caches for storing intermediate resilient
+distributed dataset (RDD) objects in Spark. My work resolves the
+tension between garbage collection (GC) and
+serialization/deserialization by providing a memory-mapped heap (MMH)
+over storage devices. It eliminates both GC and serialization
+overheads without impacting the Java memory model.
+
+Enabling MMH over fast storage brings many challenges which my work
+tackles. (1) TeraCache provides a large virtual address space for Java
+applications by mapping a second heap over a storage device. The
+second heap is not garbage collected. My work exploits Spark semantics
+to identify long-lived RDDs.  (2) TeraCache collects the two heaps in
+isolation including tracking and managing references across the memory
+and storage heaps.  (3) TeraCache removes serialization by providing
+direct access to cached RDDs in the second heap. 
+
+I strongly believe my research can potentially improve the efficiency
+of managed language runtimes for datacenters workloads. My research
+focuses on the challenges faced by memory-intensive services at
+Twitter and other enterprises that regularly deal with big data.  I
+would welcome the opportunity to examine my proposed techniques on
+real-world applications and infrastructure and interact with experts
+at Twitter.
